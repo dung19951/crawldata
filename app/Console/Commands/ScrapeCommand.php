@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Scraper\Example;
 
 class ScrapeCommand extends Command
 {
@@ -20,14 +21,16 @@ class ScrapeCommand extends Command
      */
     protected $description = 'Command description';
 
+    protected $point;
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Example $example)
     {
         parent::__construct();
+        $this->point = $example;
     }
 
     /**
@@ -37,7 +40,6 @@ class ScrapeCommand extends Command
      */
     public function handle()
     {
-        $bot = new \App\Scraper\Example();
-        $bot->scrape();
+        $this->point->scrape();
     }
 }
