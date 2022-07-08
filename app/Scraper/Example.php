@@ -32,7 +32,7 @@ class Example
                 $civic_education = $node->filter('#GDCD td')->text();
                 Point::create([
                     'identification_number'=>$number,
-                    'exam_cluster'=>$number,
+                    'exam_cluster'=>$cluster,
                     'maths'=>$maths,
                     'literature'=>$literature,
                     'english'=>$english,
