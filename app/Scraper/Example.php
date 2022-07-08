@@ -21,15 +21,15 @@ class Example
             function (Crawler $node) {
                 $number = $node->filter('tr td:nth-child(2)')->text();
                 $cluster = $node->filter('tr td:nth-child(3)')->text();
-                $maths = $node->filter('.Toan td')->text();
-                $literature = $node->filter('.NguVan td')->text();
-                $english = $node->filter('.NgoaiNgu td')->text();
-                $physics = $node->filter('.VatLi td')->text();
-                $chemistry = $node->filter('.HoaHoc td')->text();
-                $biological = $node->filter('.SinhHoc td')->text();
-                $history = $node->filter('.LichSu td')->text();
-                $geography = $node->filter('.Diali td')->text();
-                $civic_education = $node->filter('.GDCD td')->text();
+                $maths = $node->filter('#Toan td')->text();
+                $literature = $node->filter('#NguVan td')->text();
+                $english = $node->filter('#NgoaiNgu td')->text();
+                $physics = $node->filter('#VatLi td')->text();
+                $chemistry = $node->filter('#HoaHoc td')->text();
+                $biological = $node->filter('#SinhHoc td')->text();
+                $history = $node->filter('#LichSu td')->text();
+                $geography = $node->filter('#Diali td')->text();
+                $civic_education = $node->filter('#GDCD td')->text();
                 Point::create([
                     'identification_number'=>$number,
                     'exam_cluster'=>$number,
